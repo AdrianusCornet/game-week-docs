@@ -1,19 +1,16 @@
 # The Game: Black Jack 
 
-## 1. How many Apps?
+#### url client repo: ...
+#### url server repo: ...
 
-2
-client
-server
-
-## 2. Database schema
+##  Database schema
 
 Users
 - id
 - name
 - hashed password
-- ( credits
 - players (User.hasMany(Player))
+- ? credits
 
 User.findAll({ include: [Player] })
 [
@@ -62,19 +59,23 @@ When a user joins a room
 
 Rooms
 - id
-- ( name
-- ( room password
+- ? name
+- ? room password
 - cards house
 - status
 - players (has many players)
 
 ## 3. What properties will the redux store have?
-
 - user
   - name
   - jwt
-- games: [{ ...game }]
-- game: { players, cards }
+- games = a array of objects representing a game
+  - game = a object containing data about a game
+    - id
+    - players = a array of all players includign the hous in the room
+    - carts = a 2d array of the carts in the room (a 1d array per player)
+
+##### (this is stil t.b.d.)
 
 ## 4. What routes will be handled?
 
@@ -88,21 +89,21 @@ get
 post (subscribe)
 - /rooms
 - /rooms/:id
-- ( /player/:id
+- ? /user/:id
 
 post
 - /submit
 - /login
 - /draw
 - /hold
-- ( bet options
+- ? bet options
 - /leaveTable
 
 put
-- ( /user/:id
+- ? /user/:id
 
 delete
-- ( /user/:id
+- ? /user/:id
 
 ## 5. How will the files be structured
 
@@ -119,4 +120,4 @@ components/
 same as in exercises
 
 ## legend
-( = optinal
+? = optinal
