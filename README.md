@@ -3,69 +3,33 @@
 #### url client repo: ...
 #### url server repo: ...
 
-##  Database schema
+## Database schema
 
 Users
 - id
 - name
 - hashed password
-- players (User.hasMany(Player))
+- players = a array of player id's (User.hasMany(Player))
 - ? credits
-
-User.findAll({ include: [Player] })
-[
-  {
-    id
-    name
-    pw
-    players: [{
-      id
-      userId
-      roomId
-      cards
-    }]
-  }
-]
 
 Players
 - id
-- user (Player.belongsTo(User))
-- room (Player.belongsTo(Room))
+- user = a user id (Player.belongsTo(User))
+- room = a room id (Player.belongsTo(Room))
 - cards
-- (bet)
-
-Player.findByPk(playerId, { include: [User, Room] })
-{
-  id
-  user: {
-    id: 3,
-    name
-    pw
-    playerIds
-  }
-  room: {
-    id
-    cards
-  }
-}
-
-When you create a user:
-  User.create
-
-When a user joins a room
-  User.find(user =>
-    Player.create({ user })
-  )
+- ? bet
 
 Rooms
 - id
-- ? name
-- ? room password
 - cards house
 - status
-- players (has many players)
+- players (Room.hasMany(User))
+- ? name
+- ? room password
 
-## 3. What properties will the redux store have?
+##### (are we going to use singular or multipol { * / *s })
+
+## What properties will the redux store have?
 - user
   - name
   - jwt
@@ -77,7 +41,7 @@ Rooms
 
 ##### (this is stil t.b.d.)
 
-## 4. What routes will be handled?
+## What routes will be handled?
 
 get
 - /rooms
@@ -87,9 +51,9 @@ get
 - /ping
 
 post (subscribe)
-- /rooms
-- /rooms/:id
-- ? /user/:id
+- /rooms (returns a list of rooms whidt minimal extra data)
+- /rooms/:id (returns all the data consurnign a room)
+- ? /user/:id (returns the credists of a user)
 
 post
 - /submit
@@ -105,7 +69,7 @@ put
 delete
 - ? /user/:id
 
-## 5. How will the files be structured
+## How will the files be structured
 
 ### client
 
