@@ -1,7 +1,17 @@
+a colaberation betwean
+- Ionut Sirbu
+- Andrew Omajuwa
+- Adrianus Cornet
+
+#### to do in this file
+- (* / *s) => line 37
+- (redux store) => line 49
+- (*.jsx ore index.jsx) => line 89
+
 # The Game: Black Jack 
 
-#### url client repo: ...
-#### url server repo: ...
+#### [Client](https://github.com/AdrianusCornet/game-week-client)
+#### [Server](https://github.com/AdrianusCornet/game-week-server)
 
 ## Database schema
 
@@ -74,10 +84,12 @@ delete
 ### client
 
 standard react file structure
-components/
-  RoomList/
-    ContainerRoomList.jsx // index.jsx???
-    DisplayRoomList.jsx
+- components/
+  - RoomList/
+    - ContainerRoomList.jsx // index.jsx??? 
+    - DisplayRoomList.jsx
+
+##### ( *.jsx ore index.jsx )
 
 ### server
 
