@@ -1,12 +1,7 @@
 a colaberation betwean
-- Ionut Sirbu
-- Andrew Omajuwa
-- Adrianus Cornet
-
-#### to do in this file
-- (* / *s) => line 37
-- (redux store) => line 49
-- (*.jsx ore index.jsx) => line 89
+- [Ionut Sirbu](https://www.linkedin.com/in/isirbu)
+- [Andrew Omajuwa](https://www.linkedin.com/in/andrew-omajuwa)
+- [Adrianus Cornet](linkedin.com/in/adrianus-cornet-27390a172)
 
 # The Game: Black Jack 
 
@@ -15,21 +10,21 @@ a colaberation betwean
 
 ## Database schema
 
-Users
+User
 - id
 - name
 - hashed password
 - players = a array of player id's (User.hasMany(Player))
 - ? credits
 
-Players
+Player
 - id
 - user = a user id (Player.belongsTo(User))
 - room = a room id (Player.belongsTo(Room))
 - cards
 - ? bet
 
-Rooms
+Room
 - id
 - cards house
 - status
@@ -37,35 +32,37 @@ Rooms
 - ? name
 - ? room password
 
-##### (are we going to use singular or multipol { * / *s })
-
-## What properties will the redux store have?
+## Properties in the redux store
 - user
-  - name
-  - jwt
+    - name
+    - jwt
 - games = a array of objects representing a game
-  - game = a object containing data about a game
-    - id
-    - players = a array of all players includign the hous in the room
-    - carts = a 2d array of the carts in the room (a 1d array per player)
+    - game = a object containing data about a game
+        - id
+        - house
+            - cards = a array of cards
+        - players = a array of player objects
+            - player
+                - id
+                - name
+                - cards = a array of cards
+                - ? bet
 
-##### (this is stil t.b.d.)
+## Handled routes
 
-## What routes will be handled?
-
-get
+### get
 - /rooms
 - /rooms/:id
 - /users
 - /users/:id
 - /ping
 
-post (subscribe)
+### post (subscribe)
 - /rooms (returns a list of rooms whidt minimal extra data)
 - /rooms/:id (returns all the data consurnign a room)
 - ? /user/:id (returns the credists of a user)
 
-post
+### post
 - /submit
 - /login
 - /draw
@@ -73,27 +70,25 @@ post
 - ? bet options
 - /leaveTable
 
-put
+### put
 - ? /user/:id
 
-delete
+### delete
 - ? /user/:id
 
-## How will the files be structured
+## Files structure
 
 ### client
 
 standard react file structure
 - components/
   - RoomList/
-    - ContainerRoomList.jsx // index.jsx??? 
-    - DisplayRoomList.jsx
-
-##### ( *.jsx ore index.jsx )
+    - RoomListContainer.jsx
+    - RoomListDisplay.jsx
 
 ### server
 
 same as in exercises
 
 ## legend
-? = optinal
+? = optional
