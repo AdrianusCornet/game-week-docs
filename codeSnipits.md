@@ -1,5 +1,5 @@
-// return a user including its players
-
+return a user including its players
+~~~
 User.findAll({ include: [Player] })
 [
   {
@@ -14,9 +14,9 @@ User.findAll({ include: [Player] })
     }]
   }
 ]
-
-// return a player including its user and room
-
+~~~
+return a player including its user and room
+~~~
 Player.findByPk(playerId, { include: [User, Room] })
 {
   id
@@ -31,11 +31,13 @@ Player.findByPk(playerId, { include: [User, Room] })
     cards
   }
 }
+~~~
+When you create a user:
+`User.create`
 
-// When you create a user:
-User.create
-
-// When a user joins a room
+When a user joins a room
+~~~~
 User.find(user =>
   Player.create({ user })
 )
+~~~~
