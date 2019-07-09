@@ -19,8 +19,8 @@ User
 
 Player
 - id
-- user = a user id (Player.belongsTo(User))
-- room = a room id (Player.belongsTo(Room))
+- user = a user id `Player.belongsTo(User)`
+- room = a room id `Player.belongsTo(Room)`
 - cards
 - ? bet
 
@@ -28,7 +28,7 @@ Room
 - id
 - cards house
 - status
-- players (Room.hasMany(User))
+- players `Room.hasMany(User)`
 - ? name
 - ? room password
 
